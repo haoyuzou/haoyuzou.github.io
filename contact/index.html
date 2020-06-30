@@ -119,7 +119,25 @@ body {
       
 <center><strong>留言区</strong></center>
 <center>如果进入聊天区的时候显示<strong>Error:Network error</strong>，请过10分钟后再试</center>
+{% if site.gitalk.enable %}
+<link rel="stylesheet" href="https://unpkg.com/gitalk/dist/gitalk.css">
+<script src="https://unpkg.com/gitalk@latest/dist/gitalk.min.js"></script>
 
+<div id="gitalk-container"></div>
+    <script type="text/javascript">
+    var gitalk = new Gitalk({
+
+        clientID: `5faf2885335f91893c4f`,
+        clientSecret: `a445291ad0d3814e92095926dd590d40cd225f0a`,
+        repo: `haoyuzou.github.io`,
+        owner: 'haoyuzou',
+        admin: ['haoyuzou'],
+        id: '留言',
+    
+    });
+    gitalk.render('gitalk-container');
+</script>
+{% endif %}
 
   </div>
 
